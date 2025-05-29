@@ -46,6 +46,12 @@ All deployments are zero-downtime with automatic rollback support.
 
 ---
 
+🔗 Live Demo
+Access the deployed RooMatch platform here:
+👉 https://storage.googleapis.com/roomatch-prod-static-site/index.html
+
+---
+
 ## 🔭 Future Roadmap
 
 * **Google OAuth 2.0**: Add secure, single-sign-on authentication
