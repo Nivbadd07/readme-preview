@@ -1,94 +1,104 @@
-# 🌐 RooMatch – Cloud-Native Roommate Matching Platform
+# RooMatch – Intelligent Roommate Matching Platform
 
-**RooMatch** is a next-generation, cloud-native platform designed to intelligently match roommates based on lifestyle compatibility, behavioral traits, and housing preferences. Built as part of my B.Sc. in Information Systems capstone, RooMatch showcases real-world, production-grade engineering using modern DevOps, microservices, and AI-aligned principles.
-
----
-
-## ✨ Key Features
-
-* 🖥️ Fully responsive single-page frontend using HTML, CSS, JavaScript, and TailwindCSS.
-* 🧠 AI-enhanced Python (Flask) match engine that calculates compatibility scores.
-* ☁️ Direct, secure file uploads from browser to Google Cloud Storage via signed URLs.
-* 🔁 Stateless microservices deployed on Google Cloud Run with auto-scaling and zero-downtime revisioning.
-* 🗄️ Supabase PostgreSQL for relational data and JWT-based access control.
-* 🚀 CI/CD pipeline with GitHub Actions, Cloud Build, and Artifact Registry for fast, automated delivery.
+**RooMatch** is a cloud-native web application designed to intelligently match roommates based on lifestyle compatibility, personal habits, and housing preferences. Built as part of a final-year B.Sc. in Information Systems project, it demonstrates scalable architecture, production-ready infrastructure, and end-to-end automation using modern DevOps and full-stack development practices.
 
 ---
 
-## 🛠️ Tech Stack Overview
+## 🔍 Overview
 
-| Layer          | Technologies                                                              |
-| -------------- | ------------------------------------------------------------------------- |
-| Frontend       | HTML, CSS, JavaScript, TailwindCSS, Vite                                  |
-| Match Engine   | Python 3.12 (Flask), modular microservice architecture                    |
-| Data Layer     | Supabase PostgreSQL, JWT auth, pgvector (planned)                         |
-| File Storage   | Google Cloud Storage, signed URL uploads                                  |
-| Cloud Services | Google Cloud Run, Load Balancing, Artifact Registry, Secret Manager       |
-| DevOps & IaC   | GitHub Actions, Cloud Build, Terraform, Build Triggers, Rollback Handling |
+RooMatch combines a dynamic single-page application with cloud-hosted services to deliver real-time, data-driven roommate recommendations. With a focus on modularity, scalability, and automation, the platform reflects best practices in microservices, CI/CD, and serverless architecture.
 
 ---
 
-## 🧭 System Architecture
+## 🚀 Features
+
+* **Responsive Web App**: Built with HTML, CSS, JavaScript, Vite, and TailwindCSS for a smooth, mobile-first user experience.
+* **Backend API**: Node.js (Express) service hosted on Cloud Run, providing RESTful endpoints for user interactions, matching logic, and file processing.
+* **Cloud Storage Uploads**: Secure, signed URL mechanism enables direct image uploads from the browser to Google Cloud Storage.
+* **Authentication & Database**: Supabase provides PostgreSQL-based persistence and JWT-secured authentication.
+* **CI/CD Pipeline**: GitHub Actions automates build, test, and deployment workflows to Google Cloud.
+
+---
+
+## 🧰 Tech Stack
+
+| Layer             | Technology Stack                                |
+| ----------------- | ----------------------------------------------- |
+| **Frontend**      | HTML, CSS, JavaScript, TailwindCSS, Vite        |
+| **Backend**       | Node.js (Express), Docker                       |
+| **Database**      | Supabase (PostgreSQL), JWT authentication       |
+| **File Storage**  | Google Cloud Storage (Signed URLs)              |
+| **Cloud Hosting** | Google Cloud Run, Load Balancer, Secret Manager |
+| **CI/CD**         | GitHub Actions, Cloud Build, Artifact Registry  |
+
+---
+
+## 🗺️ System Architecture
 
 ```
-                   ┌────────────────────┐
-                   │     Frontend       │
-                   │  (HTML/CSS/JS)     │
-                   └────────┬───────────┘
-                            │
-                            ▼
-        ┌────────────────────────────────────┐
-        │ Google Cloud Storage (Static Site)│
-        └────────────────┬───────────────────┘
+             ┌────────────────────────────┐
+             │        Frontend           │
+             │  HTML / CSS / JS / Vite   │
+             └────────────┬──────────────┘
+                          │
+                          ▼
+        ┌────────────────────────────────────────┐
+        │   Google Cloud Storage (Static Site)   │
+        └────────────────┬───────────────────────┘
                          │
                          ▼
-        ┌────────────────────────────────────┐
-        │ Python Match Engine (Flask, REST) │
-        └────────────────┬───────────────────┘
+        ┌────────────────────────────────────────┐
+        │     Node.js Backend API (Cloud Run)    │
+        └────────────────┬───────────────────────┘
                          │
                          ▼
-        ┌────────────────────────────────────┐
-        │ Supabase (PostgreSQL + JWT Auth)  │
-        └────────────────────────────────────┘
+        ┌────────────────────────────────────────┐
+        │    Supabase (PostgreSQL + Auth)        │
+        └────────────────────────────────────────┘
                          ▲
                          │
-        ┌────────────────────────────────────┐
-        │ CI/CD: GitHub Actions → Cloud Build│
-        │        → Artifact Registry → Deploy│
-        └────────────────────────────────────┘
+        ┌────────────────────────────────────────┐
+        │     GitHub Actions + Cloud Build       │
+        │   (CI/CD, Artifact Registry, Deploy)   │
+        └────────────────────────────────────────┘
 ```
 
 ---
 
-## 🚢 Deployment
+## 🛠️ DevOps Pipeline
 
-* 🌍 **Frontend**: [RooMatch Static Site](http://storage.googleapis.com/roomatch-prod-static-site/index.html)
-* ⚙️ **Match Engine & Services**: Hosted on Google Cloud Run with traffic control, logs, secrets, and automatic revisioning.
+The development workflow is fully automated using GitHub Actions:
 
----
+1. **Code Push** → Triggers CI workflow
+2. **Docker Build** → Creates containerized backend
+3. **Cloud Storage Upload** → Updates static frontend files
+4. **Cloud Run Deploy** → Rolls out new backend revisions
 
-## 🔮 Planned Enhancements
-
-* 🔐 Google OAuth 2.0 for SSO.
-* 🧬 AI-based matching using OpenAI embeddings + pgvector.
-* 🔔 Firebase Cloud Messaging for push notifications.
-* 📱 React Native mobile application.
-* ✅ End-to-end test suite (unit, integration, Cypress).
+All deployments are zero-downtime with automatic rollback support.
 
 ---
 
-## 👨‍💻 Author
+## 🔭 Future Roadmap
+
+* **Google OAuth 2.0**: Add secure, single-sign-on authentication
+* **AI Matching Engine**: Integrate OpenAI embeddings + `pgvector` for smarter compatibility scoring
+* **Push Notifications**: Use Firebase Cloud Messaging for real-time alerts
+* **Mobile App**: Build a React Native client for iOS and Android
+* **End-to-End Testing**: Integrate Jest and Cypress for automated test coverage
+
+---
+
+## 👤 About the Author
 
 **Niv Badash**
-Cloud-native full-stack developer with a passion for intelligent architecture and automated delivery pipelines.
-📩 [nivbadd@gmail.com](mailto:nivbadd@gmail.com)
+Cloud-native full-stack engineer focused on intelligent system design and automated delivery pipelines.
+Contact: [nivbadd@gmail.com](mailto:nivbadd@gmail.com)
 
 ---
 
-## 🤝 Collaboration
+## 🤝 Contribute & Collaborate
 
-Whether it's feedback, code contributions, or technical partnerships—I'm open to ideas. Reach out directly or submit a GitHub issue to collaborate.
+Contributions, ideas, and feedback are welcome.
+To collaborate or report issues, please open a GitHub issue or reach out directly.
 
 ---
-
-> 🚀 RooMatch blends smart logic and modern infrastructure to transform how roommates discover each other in the digital age.
