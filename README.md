@@ -78,7 +78,8 @@ To collaborate or report issues, please open a GitHub issue or reach out directl
 ---
 ## 🗺️ System Architecture
 
-![diagram-export-5-29-2025-3_45_30-PM](https://github.com/user-attachments/assets/2927d506-78be-49de-8f9b-717cd70a1eaf)
+![diagram-export-5-30-2025-11_37_59-AM](https://github.com/user-attachments/assets/2b181c04-184c-4f51-96d8-a05bb52cae07)
+
 
 
 
